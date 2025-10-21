@@ -2,10 +2,9 @@ import { Button } from "@/components/ui/button";
 import { prisma } from "../utils/db";
 
 export default function SeedDatabase() {
-
-    async function postData() {
-        "use server";
-        await prisma.movie.createMany({
+  async function postData() {
+    "use server";
+    await prisma.movie.createMany({
       data: [
         {
           id: 0,
@@ -168,10 +167,10 @@ export default function SeedDatabase() {
   }
 
   return (
-    <div className = "m-5">
-      <form action = {postData}>
-     <Button type="submit">Submit</Button>
+    <div className="m-5">
+      <form action={postData}>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
-  )
+  );
 }

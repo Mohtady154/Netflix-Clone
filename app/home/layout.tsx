@@ -15,12 +15,12 @@ export default async function HomeLayout({
     return redirect("/login");
   }
 
-  return <>
-    <Navbar />
-    <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
+  return (
+    <>
+      <Navbar />
+      <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
         {children}
-    </main>
-  </>;
+      </main>
+    </>
+  );
 }
-
-  

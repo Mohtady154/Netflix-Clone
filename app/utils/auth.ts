@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "database",
   },
-  secret: process.env.NEXTAUTH_SECRET, 
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn({ user, account }) {
       if (!account || !user?.email) {
@@ -68,7 +68,7 @@ export const authOptions: NextAuthOptions = {
         return true;
       }
 
-      return true; 
+      return true;
     },
   },
 };
