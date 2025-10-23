@@ -8,8 +8,10 @@ async function getData(category: string, userId: string) {
   switch (category) {
     case "shows": {
       const data = await prisma.movie.findMany({
-        where: {
-          category: "show",
+          where: {
+          category: {
+            in: ["show", "trending-show"], 
+          },
         },
         select: {
           age: true,
@@ -32,8 +34,10 @@ async function getData(category: string, userId: string) {
 
     case "movies": {
       const data = await prisma.movie.findMany({
-        where: {
-          category: "movie",
+          where: {
+          category: {
+            in: ["movie", "trending-movie"], 
+          },
         },
         select: {
           age: true,
@@ -54,10 +58,12 @@ async function getData(category: string, userId: string) {
 
       return data;
     }
-    case "recently": {
+    case "trending": {
       const data = await prisma.movie.findMany({
-        where: {
-          category: "recent",
+          where: {
+          category: {
+            in: ["trending-show", "trending-movie"], 
+          },
         },
         select: {
           age: true,

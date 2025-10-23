@@ -18,7 +18,7 @@ async function getData() {
     orderBy: {
       createdAt: "desc",
     },
-    take: 4,
+    take: 6,
   });
   return data;
 }
