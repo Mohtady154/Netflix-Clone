@@ -90,13 +90,14 @@ async function getData(category: string, userId: string) {
   }
 }
 
-export default async function CategoryPage({
-  params,
-}: {
-  params: { genre: string };
-}) {
+interface CategoryPageProps {
+  params: Promise<{ genre: string }>;
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { genre } = await params; 
   const session = await getServerSession(authOptions);
-  const data = await getData(params.genre, session?.user?.email as string);
+  const data = await getData(genre, session?.user?.email as string);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-5 sm:px-0 mt-10 gap-6">
@@ -127,7 +128,7 @@ export default async function CategoryPage({
                 time={movie.duration}
                 title={movie.title}
                 watchListId={movie.WatchLists[0]?.id}
-                watchList={movie.WatchLists.length > 0 ? true : false}
+                watchList={movie.WatchLists.length > 0}
                 year={movie.release}
                 youtubeUrl={movie.youtubeString}
               />
@@ -138,3 +139,4 @@ export default async function CategoryPage({
     </div>
   );
 }
+
