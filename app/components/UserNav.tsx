@@ -10,9 +10,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function UserNav() {
+  const { data: session } = useSession();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,7 +24,9 @@ export default function UserNav() {
         >
           <Avatar className="h-10 w-10 rounded-sm">
             <AvatarImage src="https://vqkvzjqwjodlxmawttzy.supabase.co/storage/v1/object/public/user%20image/avatar.png" />
-            <AvatarFallback className="rounded-sm">Jan</AvatarFallback>
+            <AvatarFallback className="rounded-sm">
+              {session?.user?.name?.[0] || "?"}
+            </AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -30,9 +34,11 @@ export default function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">Jan</p>
+            <p className="text-sm font-medium leading-none">
+              {session?.user?.name || "Guest"}
+            </p>
             <p className="text-xs leading-none text-muted-foreground">
-              jkasdf@asdkfj.com
+              {session?.user?.email || "No email"}
             </p>
           </div>
         </DropdownMenuLabel>
