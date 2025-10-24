@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Netflix Clone — Next.js 15 + Supabase + Prisma + NextAuth + Tailwind + ShadCN/UI
 
-## Getting Started
+A *modern Netflix-like streaming web app* built using *Next.js 15*, featuring authentication, database management, and a sleek responsive UI.  
+This project demonstrates how to build a *production-grade full-stack web application* using the latest web technologies.
 
-First, run the development server:
+<p align="center"><img src="https://media.tenor.com/miBRlkp03LkAAAAj/netflix.gif" width="400"/></p>
 
-```bash
+---
+
+## 🚀 Tech Stack
+
+| Technology             | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| ⚡ *Next.js 15*       | App Router, SSR, and API Routes              |
+| 🔐 *NextAuth.js*     | Secure authentication & session management   |
+| 🗄 *Supabase*       | PostgreSQL database, auth & file storage     |
+| 💾 *Prisma ORM*      | Elegant database schema, migrations, seeding |
+| 🎨 *Tailwind CSS v4* | Utility-first responsive styling             |
+| 🧩 *ShadCN/UI*       | Pre-built modern UI components               |
+| 🧠 *Framer Motion*   | Subtle animations and smooth transitions     |
+
+---
+
+## 🖼 Preview
+
+### 🔐 Authentication  
+![Login Screenshot](./public/screenshots/login.png)
+
+### 🌆 Home Page  
+![Home Page Screenshot](./public/screenshots/home.png)
+
+### 🎥 Movie Details  
+![Movie Details Screenshot](./public/screenshots/movies.png)
+
+![Movie Details Screenshot](./public/screenshots/movies2.png)
+
+---
+
+# ⚙ Features
+
+✅ Modern Netflix-style UI
+
+✅ Secure Authentication with NextAuth
+
+✅ Login via Google & GitHub
+
+✅ Browse Trending & Recently Added Movies
+
+✅ Play Movie Trailers with Modals
+
+✅ Movie Search
+
+✅ Genre-Based Movie Filtering
+
+✅ Supabase + Prisma integration for data storage
+
+✅ Responsive & Animated Design (Tailwind + Shadcn)
+
+---
+
+# 🛠 Setup & Installation
+
+## 1️⃣ Clone Repository:
+
+git clone https://github.com/Mohtady154/Netflix-Clone.git
+
+cd netflix-clone
+
+## 2️⃣ Install Dependencies:
+
+npm install
+
+## 3️⃣ Configure Environment Variables:
+
+Create a .env file in your project root:
+
+DATABASE_URL="your_supabase_database_url"
+
+NEXTAUTH_SECRET="your_generated_secret"
+
+NEXTAUTH_URL="http://localhost:3000"
+
+GITHUB_ID=your github id
+
+GITHUB_SECRET=your github secret code
+
+GOOGLE_CLIENT_ID=your google client id 
+
+GOOGLE_CLIENT_SECRET=your google client secret code 
+
+EMAIL_SERVER_USER=resend
+
+EMAIL_SERVER_PASSWORD=your email server password 
+
+EMAIL_SERVER_HOST=smtp.resend.com
+
+EMAIL_SERVER_PORT=465
+
+EMAIL_FROM=onboarding@resend.dev
+
+NEXTAUTH_DEBUG=true
+
+## 4️⃣ Run Prisma Migrations:
+
+npx prisma migrate dev
+
+## 5️⃣ Start Development Server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 Author
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Mohtady Sameh | Software Developer | 📧 mohtadysameh154@gmail.com | 🌐 LinkedIn : https://www.linkedin.com/in/mohtady-sameh-dev/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⭐ Support
 
-## Learn More
+If you found this project helpful, consider giving it a ⭐ on GitHub — it motivates a lot!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center"> <img src="https://media.giphy.com/media/3o7TKxOhyN7xu6nTnO/giphy.gif" width="200"/> </p> ```
